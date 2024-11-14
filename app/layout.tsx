@@ -1,6 +1,13 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import NavBar from "./NavBar";
+import Image from "next/image";
+
+
+import GooglePlayImage from '@/assets/googleplay.png';
+import AppStoreImage from '@/assets/appstore.png';
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +35,61 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <NavBar />
         {children}
+        <footer className="bg-gradient-to-b from-primary to-[#397f6a] py-20 flex flex-col items-center justify-center text-center md:px-32">
+          <p className="text-white text-3xl md:text-5xl">
+            Discover More
+          </p>
+          <p className="text-white mb-4">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sunt reiciendis doloribus quisquam voluptates obcaecati a tempore vel non. Officiis necessitatibus temporibus minima aliquid enim suscipit aliquam accusamus quos maxime nisi.
+          </p>
+          <div className="flex gap-2 justify-center">
+          <button className="w-40 h-auto">
+              <Image src={GooglePlayImage} alt="get it on google play" className="w-full" />
+            </button>
+            <button className="w-40 h-auto">
+              <Image src={AppStoreImage} alt="get it on app store" className="w-full" />
+            </button>
+          </div>
+        </footer>
+        <footer className="p-4 md:px-12">
+          <div className="flex md:gap-12">
+            <div>
+              <p className="text-3xl">Logo</p>
+              <ul className="*:text-muted-foreground">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-2xl">Links</p>
+              <ul className="*:text-muted-foreground">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-2xl">Contact Information</p>
+              <ul className="*:text-muted-foreground">
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+                <li>Lorem ipsum dolor sit amet</li>
+              </ul>
+            </div>
+            <div className="flex-1">
+
+            </div>
+          </div>
+          {/* Copyright */}
+          <div></div>
+        </footer>
       </body>
     </html>
   );
